@@ -123,21 +123,24 @@ nav a:hover::after {
 }
 
 .hero .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-centered {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    max-width: 800px;
 }
 
-.hero-content {
-    max-width: 550px;
-}
-
-.hero-content h2 {
+.hero-centered h2 {
     font-size: 3rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 24px;
+    margin-top: 40px;
 }
 
 .highlight {
@@ -156,7 +159,7 @@ nav a:hover::after {
     z-index: -1;
 }
 
-.hero-content p {
+.hero-centered p {
     font-size: 1.25rem;
     color: var(--text-light);
     margin-bottom: 32px;
@@ -165,6 +168,7 @@ nav a:hover::after {
 .cta-buttons {
     display: flex;
     gap: 16px;
+    margin-bottom: 40px;
 }
 
 .btn {
@@ -202,6 +206,9 @@ nav a:hover::after {
 
 .hero-image {
     position: relative;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 600px;
 }
 
 .hero-image img {
@@ -440,24 +447,8 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-    .hero .container {
-        grid-template-columns: 1fr;
-    }
-    
-    .hero-content {
-        text-align: center;
-        margin: 0 auto;
-    }
-    
-    .cta-buttons {
-        justify-content: center;
-    }
-    
-    .hero-image {
-        margin-top: 40px;
-        max-width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+    .hero-centered h2 {
+        font-size: 2.5rem;
     }
     
     .features-grid {
