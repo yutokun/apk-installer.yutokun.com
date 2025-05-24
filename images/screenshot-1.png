@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" rx="12" fill="#F5F5F7"/>
+  <rect x="150" y="80" width="500" height="440" rx="12" fill="white" stroke="#E1E1E6" stroke-width="2"/>
+  
+  <!-- App Window Title Bar -->
+  <rect x="150" y="80" width="500" height="30" rx="12 12 0 0" fill="#F5F5F7"/>
+  <circle cx="170" cy="95" r="6" fill="#FF6B6B"/>
+  <circle cx="190" cy="95" r="6" fill="#FFD93D"/>
+  <circle cx="210" cy="95" r="6" fill="#6BCB77"/>
+  <text x="400" y="98" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#8E8E93">APK Installer - デバイス管理</text>
+  
+  <!-- Device Management UI -->
+  <rect x="175" y="135" width="180" height="350" rx="8" fill="#F5F5F7"/>
+  <text x="205" y="160" font-family="Arial, sans-serif" font-size="14" text-anchor="start" font-weight="bold" fill="#1C1C1E">接続済みデバイス</text>
+
+  <!-- Device 1 -->
+  <rect x="185" y="180" width="160" height="70" rx="8" fill="white" stroke="#E1E1E6" stroke-width="1"/>
+  <circle cx="215" cy="215" r="20" fill="#5856D6" fill-opacity="0.1"/>
+  <path d="M205 215 L225 215 M215 205 L215 225" stroke="#5856D6" stroke-width="2" stroke-linecap="round"/>
+  <text x="250" y="205" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#1C1C1E">Pixel 6 Pro</text>
+  <text x="250" y="225" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#8E8E93">Android 13</text>
+
+  <!-- Device 2 -->
+  <rect x="185" y="270" width="160" height="70" rx="8" fill="white" stroke="#E1E1E6" stroke-width="1"/>
+  <circle cx="215" cy="305" r="20" fill="#5856D6" fill-opacity="0.1"/>
+  <path d="M205 305 L225 305 M215 295 L215 315" stroke="#5856D6" stroke-width="2" stroke-linecap="round"/>
+  <text x="250" y="295" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#1C1C1E">Galaxy S22</text>
+  <text x="250" y="315" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#8E8E93">Android 12</text>
+
+  <!-- Device 3 -->
+  <rect x="185" y="360" width="160" height="70" rx="8" fill="white" stroke="#E1E1E6" stroke-width="1"/>
+  <circle cx="215" cy="395" r="20" fill="#5856D6" fill-opacity="0.1"/>
+  <path d="M205 395 L225 395 M215 385 L215 405" stroke="#5856D6" stroke-width="2" stroke-linecap="round"/>
+  <text x="250" y="385" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#1C1C1E">Xperia 5 III</text>
+  <text x="250" y="405" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#8E8E93">Android 12</text>
+  
+  <!-- Device Details Panel -->
+  <rect x="385" y="135" width="240" height="350" rx="8" fill="white" stroke="#E1E1E6" stroke-width="1"/>
+  <text x="405" y="165" font-family="Arial, sans-serif" font-size="16" text-anchor="start" font-weight="bold" fill="#1C1C1E">Pixel 6 Pro</text>
+  <text x="405" y="185" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#8E8E93">デバイス情報</text>
+  
+  <!-- Device Info -->
+  <rect x="405" y="205" width="200" height="1" fill="#E1E1E6"/>
+  <text x="405" y="230" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#8E8E93">製造元:</text>
+  <text x="500" y="230" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#1C1C1E">Google</text>
+  
+  <text x="405" y="255" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#8E8E93">モデル:</text>
+  <text x="500" y="255" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#1C1C1E">Pixel 6 Pro</text>
+  
+  <text x="405" y="280" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#8E8E93">Androidバージョン:</text>
+  <text x="500" y="280" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#1C1C1E">13</text>
+  
+  <text x="405" y="305" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#8E8E93">シリアル番号:</text>
+  <text x="500" y="305" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#1C1C1E">GP6P9X123456</text>
+  
+  <text x="405" y="330" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#8E8E93">ステータス:</text>
+  <text x="500" y="330" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#34C759">接続済み</text>
+  
+  <!-- Action Buttons -->
+  <rect x="405" y="365" width="200" height="40" rx="20" fill="#5856D6"/>
+  <text x="505" y="390" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">APKをインストール</text>
+  
+  <rect x="405" y="420" width="200" height="40" rx="20" fill="white" stroke="#5856D6" stroke-width="1"/>
+  <text x="505" y="445" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#5856D6">デバイス情報を更新</text>
+</svg>

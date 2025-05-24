@@ -129,4 +129,149 @@ document.addEventListener('DOMContentLoaded', () => {
             heroImg.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
         }
     });
+
+    // Carousel functionality
+    const initializeCarousel = () => {
+        const carousel = document.querySelector('.carousel-slides');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        const container = document.querySelector('.carousel-container');
+        
+        if (!carousel || slides.length === 0) return;
+        
+        let currentSlide = 0;
+        let slideInterval;
+        const slideCount = slides.length;
+        let isAnimating = false;
+        
+        // Function to update carousel position
+        const updateCarousel = () => {
+            isAnimating = true;
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update active dot
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+            
+            // Wait for transition to finish
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500); // Match this with your CSS transition time
+        };
+        
+        // Go to next slide
+        const nextSlide = () => {
+            if (isAnimating) return;
+            currentSlide = (currentSlide + 1) % slideCount;
+            updateCarousel();
+        };
+        
+        // Go to previous slide
+        const prevSlide = () => {
+            if (isAnimating) return;
+            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+            updateCarousel();
+        };
+        
+        // Go to specific slide
+        const goToSlide = (index) => {
+            if (isAnimating) return;
+            currentSlide = index;
+            updateCarousel();
+            resetInterval();
+        };
+        
+        // Reset automatic slideshow interval
+        const resetInterval = () => {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        };
+        
+        // Set up click handlers
+        if (prevBtn) prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            prevSlide();
+            resetInterval();
+        });
+        
+        if (nextBtn) nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            nextSlide();
+            resetInterval();
+        });
+        
+        // Set up dot click handlers
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+        
+        // Initial setup
+        updateCarousel();
+        
+        // Start automatic slideshow
+        resetInterval();
+        
+        // Pause slideshow when mouse is over carousel
+        if (container) {
+            container.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            // Resume slideshow when mouse leaves carousel
+            container.addEventListener('mouseleave', () => {
+                resetInterval();
+            });
+        }
+        
+        // Touch swipe functionality
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            clearInterval(slideInterval);
+        }, { passive: true });
+        
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+            resetInterval();
+        }, { passive: true });
+        
+        const handleSwipe = () => {
+            if (isAnimating) return;
+            const swipeThreshold = 50; // Minimum swipe distance
+            
+            if (touchEndX - touchStartX > swipeThreshold) {
+                // Swipe right
+                prevSlide();
+            } else if (touchStartX - touchEndX > swipeThreshold) {
+                // Swipe left
+                nextSlide();
+            }
+        };
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+                resetInterval();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+                resetInterval();
+            }
+        });
+    };
+    
+    // Initialize carousel
+    initializeCarousel();
 });
