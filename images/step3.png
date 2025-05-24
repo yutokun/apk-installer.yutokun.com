@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="300" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="300" rx="12" fill="#F5F5F7"/>
+  
+  <!-- Mac Window -->
+  <rect x="120" y="50" width="200" height="180" rx="8" fill="white" stroke="#E1E1E6" stroke-width="2"/>
+  <rect x="120" y="50" width="200" height="25" rx="8 8 0 0" fill="#E1E1E6"/>
+  <circle cx="135" cy="62.5" r="5" fill="#FF6B6B"/>
+  <circle cx="155" cy="62.5" r="5" fill="#FFD93D"/>
+  <circle cx="175" cy="62.5" r="5" fill="#6BCB77"/>
+  
+  <!-- Installation Complete Message -->
+  <rect x="140" y="100" width="160" height="100" rx="8" fill="#F5F5F7"/>
+  <circle cx="220" cy="130" r="20" fill="#34C759"/>
+  <path d="M210 130L218 138L230 122" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="220" y="170" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#1C1C1E">インストール完了</text>
+  
+  <!-- Android Device -->
+  <rect x="360" y="70" width="120" height="200" rx="10" fill="#E1E1E6"/>
+  <rect x="370" y="90" width="100" height="160" rx="4" fill="#F5F5F7"/>
+  <circle cx="420" cy="270" r="10" fill="#E1E1E6"/>
+  
+  <!-- App Icon on Android -->
+  <rect x="400" y="150" width="40" height="40" rx="8" fill="#5856D6"/>
+  <text x="420" y="175" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">APK</text>
+  
+  <!-- Connection Line -->
+  <path d="M330 150C340 150 350 150 360 150" stroke="#5856D6" stroke-width="2" stroke-dasharray="4 4"/>
+</svg>

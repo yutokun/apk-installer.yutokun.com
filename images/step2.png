@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="300" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="300" rx="12" fill="#F5F5F7"/>
+  
+  <!-- Mac Window -->
+  <rect x="120" y="50" width="360" height="200" rx="8" fill="white" stroke="#E1E1E6" stroke-width="2"/>
+  <rect x="120" y="50" width="360" height="25" rx="8 8 0 0" fill="#E1E1E6"/>
+  <circle cx="135" cy="62.5" r="5" fill="#FF6B6B"/>
+  <circle cx="155" cy="62.5" r="5" fill="#FFD93D"/>
+  <circle cx="175" cy="62.5" r="5" fill="#6BCB77"/>
+  
+  <!-- App UI -->
+  <rect x="140" y="90" width="320" height="140" rx="8" fill="#F5F5F7" stroke="#E1E1E6" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="300" y="130" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#8E8E93">ここにAPKファイルをドロップ</text>
+  
+  <!-- APK File -->
+  <rect x="400" y="150" width="60" height="80" rx="4" fill="#5856D6" fill-opacity="0.2" stroke="#5856D6" stroke-width="2"/>
+  <text x="430" y="195" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#5856D6">APK</text>
+  
+  <!-- Arrow -->
+  <path d="M390 180C370 180 340 150 300 150" stroke="#5856D6" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <path d="M310 145L300 150L310 155" stroke="#5856D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

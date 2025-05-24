@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" rx="12" fill="#F5F5F7"/>
+  <rect x="100" y="80" width="600" height="440" rx="12" fill="white" stroke="#E1E1E6" stroke-width="2"/>
+  <rect x="120" y="120" width="560" height="60" rx="8" fill="#F5F5F7" stroke="#E1E1E6" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="400" y="160" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#8E8E93">ここにAPKファイルをドロップ</text>
+  <rect x="320" y="220" width="160" height="160" rx="8" fill="#5856D6" fill-opacity="0.1"/>
+  <path d="M400 260L420 300H380L400 260Z" fill="#5856D6"/>
+  <path d="M380 320L400 280L420 320H380Z" fill="#5856D6"/>
+  <rect x="330" y="400" width="140" height="40" rx="20" fill="#5856D6"/>
+  <text x="400" y="425" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white">インストール</text>
+</svg>
