@@ -1,8 +1,8 @@
 /* Base Styles */
 :root {
-    --primary-color: #5856d6;
-    --primary-light: #7875ff;
-    --primary-dark: #4845b3;
+    --primary-color: #1ac442;
+    --primary-light: #75ff75;
+    --primary-dark: #49b345;
     --secondary-color: #34c759;
     --text-dark: #1c1c1e;
     --text-light: #8e8e93;
@@ -409,7 +409,7 @@ nav a:hover::after {
 /* Download Section */
 .download {
     padding: 100px 0;
-    background-color: var(--background-light);
+    background-color: var(--background-dark);
     text-align: center;
 }
 
