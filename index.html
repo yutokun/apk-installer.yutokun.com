@@ -15,14 +15,13 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="images/apk-installer-logo.svg" alt="APK Installer Logo" id="logo">
+				<img src="images/AppIcon1024.png" alt="APK Installer Logo" id="logo">
                 <h1>APK Installer</h1>
             </div>
             <nav>
                 <ul>
                     <li><a href="#screenshots">スクリーンショット</a></li>
                     <li><a href="#features">特徴</a></li>
-                    <li><a href="#how-it-works">使い方</a></li>
                     <li><a href="#download">ダウンロード</a></li>
                 </ul>
             </nav>
@@ -33,13 +32,13 @@
         <div class="container">
             <div class="hero-centered">
                 <div class="hero-image">
-                    <img src="images/app-screenshot.png" alt="APK Installer Screenshot" id="hero-img">
+                    <img src="images/AppIcon1024.png" alt="APK Installer Screenshot" id="hero-img">
                 </div>
                 <h2>APKファイルを<span class="highlight">簡単に</span>インストール</h2>
                 <p>ドラッグ&ドロップまたはダブルクリックするだけで<br>AndroidデバイスにAPKをインストール</p>
                 <div class="cta-buttons">
                     <a href="#download" class="btn primary-btn">Mac App Storeで入手</a>
-                    <a href="#how-it-works" class="btn secondary-btn">詳しく見る</a>
+                    <a href="#features" class="btn secondary-btn">詳しく見る</a>
                 </div>
             </div>
         </div>
@@ -47,7 +46,6 @@
 
     <section id="screenshots" class="screenshots">
         <div class="container">
-            <h2>スクリーンショット</h2>
             <div class="carousel-container">
                 <button class="carousel-prev" aria-label="前のスライド">&lt;</button>
                 <button class="carousel-next" aria-label="次のスライド">&gt;</button>
@@ -56,18 +54,14 @@
                     <div class="carousel-slide">
                         <div class="video-container">
                             <video autoplay muted loop playsinline>
-                                <source src="images/installation-demo.mp4" type="video/mp4">
+                                <source src="images/installation-demo.mov" type="video/mp4">
                                 お使いのブラウザはビデオタグをサポートしていません。
                             </video>
                         </div>
-                        <div class="caption">APKファイルをドラッグ＆ドロップするだけで簡単インストール</div>
+                        <div class="caption">APKファイルをダブルクリックするだけで簡単インストール</div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="images/screenshot-1.png" alt="デバイス管理画面">
-                        <div class="caption">複数のデバイスを一元管理、状態確認も簡単</div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="images/screenshot-2.png" alt="インストール履歴画面">
+                        <img src="images/screenshot-1.png" alt="インストール履歴画面">
                         <div class="caption">インストール履歴を確認、迅速に再インストールも可能</div>
                     </div>
                 </div>
@@ -76,7 +70,6 @@
                     <div class="carousel-dots">
                         <button class="carousel-dot active" data-slide="0" aria-label="スライド1"></button>
                         <button class="carousel-dot" data-slide="1" aria-label="スライド2"></button>
-                        <button class="carousel-dot" data-slide="2" aria-label="スライド3"></button>
                     </div>
                 </div>
             </div>
@@ -85,7 +78,6 @@
 
     <section id="features" class="features">
         <div class="container">
-            <h2>特徴</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -119,37 +111,6 @@
         </div>
     </section>
 
-    <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <h2>使い方</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Androidデバイスを接続</h3>
-                        <p>USBケーブルでAndroidデバイスをMacに接続し、USBデバッグを有効にしてください。</p>
-                        <img src="images/step1.png" alt="Connect Android Device" class="step-image">
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>APKファイルを選択</h3>
-                        <p>APKファイルをアプリにドラッグ&ドロップするか、ダブルクリックしてAPK Installerで開きます。</p>
-                        <img src="images/step2.png" alt="Select APK File" class="step-image">
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>インストール完了</h3>
-                        <p>自動的にインストールが行われ、完了するとデバイス上でアプリが使用可能になります。</p>
-                        <img src="images/step3.png" alt="Installation Complete" class="step-image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section id="download" class="download">
         <div class="container">
@@ -161,9 +122,9 @@
             <div class="requirements">
                 <h3>システム要件</h3>
                 <ul>
-                    <li>macOS 11.0 (Big Sur) 以降</li>
-                    <li>Androidデバイス（USBデバッグ有効）</li>
-                    <li>USBケーブル</li>
+                    <li>macOS 14.0 (Sonoma) 以降</li>
+                    <li>Android デバイス（USBデバッグ有効）</li>
+                    <li>USB ケーブル</li>
                 </ul>
             </div>
         </div>
@@ -178,9 +139,7 @@
                 </div>
                 <div class="footer-links">
                     <ul>
-                        <li><a href="#features">特徴</a></li>
-                        <li><a href="#how-it-works">使い方</a></li>
-                        <li><a href="#download">ダウンロード</a></li>
+                        <li><a href="/">ホーム</a></li>
                         <li><a href="privacy.html">プライバシーポリシー</a></li>
                         <li><a href="terms.html">利用規約</a></li>
                     </ul>

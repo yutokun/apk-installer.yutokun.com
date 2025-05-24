@@ -135,6 +135,8 @@ nav a:hover::after {
     max-width: 800px;
 }
 
+
+
 .hero-centered h2 {
     font-size: 3rem;
     font-weight: 700;
@@ -212,15 +214,9 @@ nav a:hover::after {
 }
 
 .hero-image img {
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
     max-width: 100%;
-    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
-    transition: var(--transition);
-}
-
-.hero-image img:hover {
-    transform: perspective(1000px) rotateY(0) rotateX(0);
+    width: 300px;
+    height: auto;
 }
 
 /* Screenshots Section */
@@ -267,6 +263,7 @@ nav a:hover::after {
     object-fit: contain;
     border-radius: 8px;
     box-shadow: var(--card-shadow);
+    display: block;
 }
 
 .video-container {
@@ -408,69 +405,6 @@ nav a:hover::after {
     color: var(--text-light);
 }
 
-/* How it Works Section */
-.how-it-works {
-    padding: 100px 0;
-    background-color: var(--background-dark);
-}
-
-.how-it-works h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 60px;
-}
-
-.steps {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.step {
-    display: flex;
-    gap: 24px;
-    align-items: flex-start;
-}
-
-.step-number {
-    background-color: var(--primary-color);
-    color: white;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 600;
-    flex-shrink: 0;
-}
-
-.step-content {
-    flex: 1;
-}
-
-.step-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-}
-
-.step-content p {
-    color: var(--text-light);
-    margin-bottom: 24px;
-}
-
-.step-image {
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-    transition: var(--transition);
-}
-
-.step-image:hover {
-    transform: scale(1.02);
-}
 
 /* Download Section */
 .download {
@@ -597,12 +531,6 @@ footer {
 @media (max-width: 768px) {
     .features-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .step {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
     }
     
     .footer-content {
