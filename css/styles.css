@@ -215,7 +215,7 @@ nav a:hover::after {
 
 .hero-image img {
     max-width: 100%;
-    width: 300px;
+    width: 200px;
     height: auto;
 }
 
