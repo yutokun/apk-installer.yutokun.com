@@ -464,8 +464,8 @@ nav a:hover::after {
     border-radius: var(--border-radius);
 }
 
-.requirements h3 {
-    font-size: 1.25rem;
+.requirements h2 {
+    font-size: 2.5rem;
     margin-bottom: 16px;
 }
 
@@ -476,6 +476,50 @@ nav a:hover::after {
 
 .requirements li {
     margin-bottom: 8px;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 100px 0;
+    background-color: var(--background-dark);
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: var(--text-dark);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.faq-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.faq-item p {
+    color: var(--text-light);
+    line-height: 1.7;
 }
 
 /* Footer */
@@ -602,14 +646,14 @@ footer {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
-    
+
     /* スクロールバーを非表示 */
-    -ms-overflow-style: none;  /* IE、Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE、Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 .touch-device .carousel-container::-webkit-scrollbar {
-    display: none;  /* Chrome、Safari */
+    display: none; /* Chrome、Safari */
 }
 
 .touch-device .carousel-slides {
@@ -619,14 +663,14 @@ footer {
     -webkit-overflow-scrolling: touch;
     transform: none !important;
     transition: none !important;
-    
+
     /* スクロールバーを非表示 */
-    -ms-overflow-style: none;  /* IE、Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE、Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 .touch-device .carousel-slides::-webkit-scrollbar {
-    display: none;  /* Chrome、Safari */
+    display: none; /* Chrome、Safari */
 }
 
 .touch-device .carousel-slide {
@@ -672,5 +716,27 @@ footer {
     .footer-links ul {
         flex-direction: column;
         gap: 12px;
+    }
+
+    .faq-section {
+        padding: 60px 0;
+    }
+
+    .faq-section h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .faq-item {
+        padding: 24px;
+        margin-bottom: 16px;
+    }
+
+    .faq-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .requirements h2 {
+        font-size: 2rem;
     }
 }
