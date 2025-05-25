@@ -136,7 +136,6 @@ nav a:hover::after {
 }
 
 
-
 .hero-centered h2 {
     font-size: 3rem;
     font-weight: 700;
@@ -242,7 +241,6 @@ nav a:hover::after {
     display: flex;
     transition: transform 0.5s ease;
     height: 550px;
-    overflow: hidden;
     border-radius: var(--border-radius);
 }
 
@@ -256,7 +254,7 @@ nav a:hover::after {
     padding: 20px;
 }
 
-.carousel-slide img, 
+.carousel-slide img,
 .video-container video {
     max-width: 100%;
     max-height: 450px;
@@ -513,16 +511,16 @@ footer {
     .hero-centered h2 {
         font-size: 2.5rem;
     }
-    
+
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    .carousel-slide img, 
+
+    .carousel-slide img,
     .video-container video {
         max-height: 400px;
     }
-    
+
     .carousel-slides {
         height: 500px;
     }
@@ -532,31 +530,31 @@ footer {
     .features-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-content {
         flex-direction: column;
         align-items: center;
         gap: 24px;
     }
-    
+
     .footer-logo {
         align-items: center;
     }
-    
+
     .footer-links ul {
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .carousel-slides {
         height: 450px;
     }
-    
-    .carousel-slide img, 
+
+    .carousel-slide img,
     .video-container video {
         max-height: 300px;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
         gap: 12px;
@@ -567,16 +565,16 @@ footer {
     .carousel-slides {
         height: 400px;
     }
-    
-    .carousel-slide img, 
+
+    .carousel-slide img,
     .video-container video {
         max-height: 250px;
     }
-    
+
     .caption {
         font-size: 1rem;
     }
-    
+
     .hero-centered h2 {
         font-size: 2rem;
     }
