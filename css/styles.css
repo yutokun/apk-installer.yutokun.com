@@ -82,6 +82,8 @@ header .container {
 .logo h1 {
     font-size: 1.5rem;
     font-weight: 600;
+    position: relative;
+    top: -2px;
 }
 
 nav ul {
@@ -217,6 +219,14 @@ nav a:hover::after {
     max-width: 100%;
     width: 200px;
     height: auto;
+}
+
+.hero-image p {
+    color: var(--text-dark);
+    font-weight: bold;
+    position: relative;
+    top: -10px;
+    margin: 0;
 }
 
 /* Screenshots Section */
