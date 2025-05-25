@@ -63,12 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Update dots based on scroll position
                 const updateDotsOnScroll = () => {
-                    const container = document.querySelector('.carousel-container');
-                    if (!container || !dots.length) return;
+                    if (!carousel || !dots.length) return;
                     
-                    const scrollLeft = container.scrollLeft;
-                    const slideWidth = container.offsetWidth;
+                    const scrollLeft = carousel.scrollLeft;
+                    const slideWidth = carousel.offsetWidth;
                     const currentSlide = Math.round(scrollLeft / slideWidth);
+                    
+                    console.log('Scroll update:', { scrollLeft, slideWidth, currentSlide, carouselWidth: carousel.offsetWidth }); // Debug
                     
                     dots.forEach((dot, index) => {
                         if (index === currentSlide) {
@@ -79,22 +80,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 };
                 
-                // Listen for scroll events
-                const container = document.querySelector('.carousel-container');
-                if (container) {
-                    container.addEventListener('scroll', updateDotsOnScroll, { passive: true });
-                }
+                // Listen for scroll events on carousel-slides (the actual scrollable element)
+                carousel.addEventListener('scroll', updateDotsOnScroll, { passive: true });
                 
                 // Set up dot click handlers for touch devices
                 dots.forEach((dot, index) => {
                     dot.addEventListener('click', () => {
-                        if (container) {
-                            const slideWidth = container.offsetWidth;
-                            container.scrollTo({
-                                left: index * slideWidth,
-                                behavior: 'smooth'
-                            });
-                        }
+                        console.log('Dot clicked:', index, 'carousel width:', carousel.offsetWidth); // Debug
+                        const slideWidth = carousel.offsetWidth;
+                        carousel.scrollTo({
+                            left: index * slideWidth,
+                            behavior: 'smooth'
+                        });
                     });
                 });
             }
