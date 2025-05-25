@@ -1,11 +1,7 @@
 # APK Installer
 
-macOS 用の APK インストーラです。
-
-詳しくは[ウェブサイト](https://apk-installer.yutokun.com)へ。
+macOS 用の APK インストーラの[ウェブサイト](https://apk-installer.yutokun.com)です。
 
 ---
 
-It is an APK installer for macOS.
-
-For more information, visit [Website](https://apk-installer.yutokun.com)(jp).
+This is the [website](https://apk-installer.yutokun.com)(jp) of the APK installer for macOS.
