@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Detect touch device and add class
+    const isTouchDevice = () => {
+        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    };
+    
+    if (isTouchDevice()) {
+        document.body.classList.add('touch-device');
+    }
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('nav a, .cta-buttons a');
     
@@ -34,50 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Feature card animation on scroll
-    const featureCards = document.querySelectorAll('.feature-card');
-    const animateOnScroll = elements => {
-        if (!elements || elements.length === 0) return;
-        
-        elements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('animate');
-            }
-        });
-    };
-    
-    // Add animation class to CSS
-    const styleSheet = document.styleSheets[0];
-    styleSheet.insertRule(`
-        .feature-card {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-    `, styleSheet.cssRules.length);
-    
-    styleSheet.insertRule(`
-        .feature-card.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    `, styleSheet.cssRules.length);
-    
-    // Set animation delay for each card
-    featureCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
-    });
-    
-    // Initial check for elements in viewport
-    animateOnScroll(featureCards);
-    
-    // Check for elements in viewport on scroll
-    window.addEventListener('scroll', () => {
-        animateOnScroll(featureCards);
-    });
+    // Feature card animation removed - now handled with pure CSS
     
     
     // Hero image animation removed

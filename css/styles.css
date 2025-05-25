@@ -321,7 +321,7 @@ nav a:hover::after {
 }
 
 .carousel-prev {
-    left: -25px;
+    left: 15px;
     transform: rotateZ(180deg);
 }
 
@@ -330,7 +330,7 @@ nav a:hover::after {
 }
 
 .carousel-next {
-    right: -25px;
+    right: 15px;
 }
 
 .carousel-next:hover {
@@ -381,12 +381,19 @@ nav a:hover::after {
     border-radius: var(--border-radius);
     padding: 32px;
     box-shadow: var(--card-shadow);
-    transition: var(--transition);
+    transition: box-shadow 0.3s ease, opacity 0.6s ease;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
 }
 
 .feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+    }
 }
 
 .feature-icon {
@@ -435,17 +442,23 @@ nav a:hover::after {
 
 .app-store-button {
     display: inline-block;
-    margin-bottom: 48px;
 }
 
 .app-store-button img {
     height: 60px;
 }
 
+/* Requirements Section */
+.requirements-section {
+    padding: 80px 0;
+    background-color: var(--background-light);
+    text-align: center;
+}
+
 .requirements {
     max-width: 500px;
     margin: 0 auto;
-    background-color: var(--background-dark);
+    background-color: var(--background-light);
     padding: 32px;
     border-radius: var(--border-radius);
 }
@@ -492,6 +505,10 @@ footer {
     list-style: none;
     display: flex;
     gap: 24px;
+}
+
+.footer-links li {
+    text-align: right;
 }
 
 .footer-links a {
@@ -546,7 +563,7 @@ footer {
 
     .footer-content {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-end;
         gap: 24px;
     }
 
@@ -574,7 +591,44 @@ footer {
     }
 }
 
+/* Hide carousel buttons on touch devices */
+.touch-device .carousel-prev,
+.touch-device .carousel-next {
+    display: none;
+}
+
+.touch-device .carousel-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.touch-device .carousel-slides {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.touch-device .carousel-slide {
+    scroll-snap-align: start;
+}
+
 @media (max-width: 480px) {
+    .screenshots {
+        padding: 20px 0;
+    }
+
+    .features {
+        padding: 40px 0;
+    }
+
+    .download {
+        padding: 40px 0;
+    }
+
+    .requirements-section {
+        padding: 20px 0;
+    }
+
     .carousel-slides {
         height: 400px;
     }
@@ -590,5 +644,10 @@ footer {
 
     .hero-centered h2 {
         font-size: 2rem;
+    }
+
+    .footer-links ul {
+        flex-direction: column;
+        gap: 12px;
     }
 }
