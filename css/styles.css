@@ -597,6 +597,10 @@ footer {
     display: none;
 }
 
+.touch-device .screenshots {
+    overflow-x: visible; /* Override parent hidden for scroll */
+}
+
 .touch-device .carousel-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -651,3 +655,4 @@ footer {
         gap: 12px;
     }
 }
+

@@ -52,6 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Carousel functionality
     const initializeCarousel = () => {
+        // Skip JS carousel on touch devices: use CSS scroll-snap instead
+        if (document.body.classList.contains('touch-device')) return;
         const carousel = document.querySelector('.carousel-slides');
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dot');
@@ -156,12 +158,14 @@ document.addEventListener('DOMContentLoaded', () => {
         let touchStartX = 0;
         let touchEndX = 0;
         
-        carousel.addEventListener('touchstart', (e) => {
+        // Use container for swipe detection on touch devices
+        const swipeTarget = container || carousel;
+        swipeTarget.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
             clearInterval(slideInterval);
         }, { passive: true });
         
-        carousel.addEventListener('touchend', (e) => {
+        swipeTarget.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
             resetInterval();
