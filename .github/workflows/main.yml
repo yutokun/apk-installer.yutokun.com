@@ -39,3 +39,4 @@ jobs:
             **/.github/**
             **/.idea/**
             /.gitignore
+            *.afdesign
