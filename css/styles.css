@@ -347,7 +347,7 @@ nav a:hover::after {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: var(--background-dark);
+    background-color: #ccc;
     border: none;
     cursor: pointer;
     transition: var(--transition);
