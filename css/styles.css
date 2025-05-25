@@ -254,6 +254,7 @@ nav a:hover::after {
     transition: transform 0.5s ease;
     height: 550px;
     border-radius: var(--border-radius);
+    overflow: visible;
 }
 
 .carousel-slide {
@@ -597,23 +598,25 @@ footer {
     display: none;
 }
 
-.touch-device .screenshots {
-    overflow-x: visible; /* Override parent hidden for scroll */
-}
-
 .touch-device .carousel-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
 }
 
 .touch-device .carousel-slides {
+    display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    transform: none !important;
+    transition: none !important;
 }
 
 .touch-device .carousel-slide {
     scroll-snap-align: start;
+    min-width: 100%;
+    flex-shrink: 0;
 }
 
 @media (max-width: 480px) {

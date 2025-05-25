@@ -53,7 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Carousel functionality
     const initializeCarousel = () => {
         // Skip JS carousel on touch devices: use CSS scroll-snap instead
-        if (document.body.classList.contains('touch-device')) return;
+        if (document.body.classList.contains('touch-device')) {
+            // Reset any transform on carousel slides for touch devices
+            const carousel = document.querySelector('.carousel-slides');
+            if (carousel) {
+                carousel.style.transform = 'none';
+            }
+            return;
+        }
         const carousel = document.querySelector('.carousel-slides');
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dot');
