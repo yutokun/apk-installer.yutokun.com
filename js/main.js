@@ -6,25 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const isTouchDevice = () => {
         return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     };
-    
+
     if (isTouchDevice()) {
         document.body.classList.add('touch-device');
     }
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('nav a, .cta-buttons a');
-    
+
     navLinks.forEach(link => {
         link.addEventListener('click', e => {
             if (link.getAttribute('href').startsWith('#')) {
                 e.preventDefault();
-                
+
                 const targetId = link.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
+
                 if (targetElement) {
                     const headerHeight = document.querySelector('header').offsetHeight;
                     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                    
+
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
+
     // Add header shadow on scroll
     const header = document.querySelector('header');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 10) {
             header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
@@ -44,33 +44,31 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.04)';
         }
     });
-    
+
     // Feature card animation removed - now handled with pure CSS
-    
-    
+
+
     // Hero image animation removed
 
     // Carousel functionality
     const initializeCarousel = () => {
         const carousel = document.querySelector('.carousel-slides');
         const dots = document.querySelectorAll('.carousel-dot');
-        
+
         // For touch devices: handle scroll events to update dots
         if (document.body.classList.contains('touch-device')) {
             // Reset any transform on carousel slides for touch devices
             if (carousel) {
                 carousel.style.transform = 'none';
-                
+
                 // Update dots based on scroll position
                 const updateDotsOnScroll = () => {
                     if (!carousel || !dots.length) return;
-                    
+
                     const scrollLeft = carousel.scrollLeft;
                     const slideWidth = carousel.offsetWidth;
                     const currentSlide = Math.round(scrollLeft / slideWidth);
-                    
-                    console.log('Scroll update:', { scrollLeft, slideWidth, currentSlide, carouselWidth: carousel.offsetWidth }); // Debug
-                    
+
                     dots.forEach((dot, index) => {
                         if (index === currentSlide) {
                             dot.classList.add('active');
@@ -79,14 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     });
                 };
-                
+
                 // Listen for scroll events on carousel-slides (the actual scrollable element)
-                carousel.addEventListener('scroll', updateDotsOnScroll, { passive: true });
-                
+                carousel.addEventListener('scroll', updateDotsOnScroll, {passive: true});
+
                 // Set up dot click handlers for touch devices
                 dots.forEach((dot, index) => {
                     dot.addEventListener('click', () => {
-                        console.log('Dot clicked:', index, 'carousel width:', carousel.offsetWidth); // Debug
                         const slideWidth = carousel.offsetWidth;
                         carousel.scrollTo({
                             left: index * slideWidth,
@@ -101,19 +98,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const prevBtn = document.querySelector('.carousel-prev');
         const nextBtn = document.querySelector('.carousel-next');
         const container = document.querySelector('.carousel-container');
-        
+
         if (!carousel || slides.length === 0) return;
-        
+
         let currentSlide = 0;
         let slideInterval;
         const slideCount = slides.length;
         let isAnimating = false;
-        
+
         // Function to update carousel position
         const updateCarousel = () => {
             isAnimating = true;
             carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
+
             // Update active dot
             dots.forEach((dot, index) => {
                 if (index === currentSlide) {
@@ -122,27 +119,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     dot.classList.remove('active');
                 }
             });
-            
+
             // Wait for transition to finish
             setTimeout(() => {
                 isAnimating = false;
             }, 500); // Match this with your CSS transition time
         };
-        
+
         // Go to next slide
         const nextSlide = () => {
             if (isAnimating) return;
             currentSlide = (currentSlide + 1) % slideCount;
             updateCarousel();
         };
-        
+
         // Go to previous slide
         const prevSlide = () => {
             if (isAnimating) return;
             currentSlide = (currentSlide - 1 + slideCount) % slideCount;
             updateCarousel();
         };
-        
+
         // Go to specific slide
         const goToSlide = (index) => {
             if (isAnimating) return;
@@ -150,72 +147,72 @@ document.addEventListener('DOMContentLoaded', () => {
             updateCarousel();
             resetInterval();
         };
-        
+
         // Reset automatic slideshow interval
         const resetInterval = () => {
             clearInterval(slideInterval);
             slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
         };
-        
+
         // Set up click handlers
         if (prevBtn) prevBtn.addEventListener('click', (e) => {
             e.preventDefault();
             prevSlide();
             resetInterval();
         });
-        
+
         if (nextBtn) nextBtn.addEventListener('click', (e) => {
             e.preventDefault();
             nextSlide();
             resetInterval();
         });
-        
+
         // Set up dot click handlers
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 goToSlide(index);
             });
         });
-        
+
         // Initial setup
         updateCarousel();
-        
+
         // Start automatic slideshow
         resetInterval();
-        
+
         // Pause slideshow when mouse is over carousel
         if (container) {
             container.addEventListener('mouseenter', () => {
                 clearInterval(slideInterval);
             });
-            
+
             // Resume slideshow when mouse leaves carousel
             container.addEventListener('mouseleave', () => {
                 resetInterval();
             });
         }
-        
+
         // Touch swipe functionality
         let touchStartX = 0;
         let touchEndX = 0;
-        
+
         // Use container for swipe detection on touch devices
         const swipeTarget = container || carousel;
         swipeTarget.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
             clearInterval(slideInterval);
-        }, { passive: true });
-        
+        }, {passive: true});
+
         swipeTarget.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
             resetInterval();
-        }, { passive: true });
-        
+        }, {passive: true});
+
         const handleSwipe = () => {
             if (isAnimating) return;
             const swipeThreshold = 50; // Minimum swipe distance
-            
+
             if (touchEndX - touchStartX > swipeThreshold) {
                 // Swipe right
                 prevSlide();
@@ -224,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 nextSlide();
             }
         };
-        
+
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') {
@@ -236,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
-    
+
     // Initialize carousel
     initializeCarousel();
 });
@@ -245,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadComponents() {
     const headerPlaceholder = document.getElementById('header-placeholder');
     const footerPlaceholder = document.getElementById('footer-placeholder');
-    
+
     if (headerPlaceholder) {
         try {
             const headerResponse = await fetch('/components/header.html');
@@ -255,7 +252,7 @@ async function loadComponents() {
             console.error('ヘッダーの読み込みに失敗しました:', error);
         }
     }
-    
+
     if (footerPlaceholder) {
         try {
             const footerResponse = await fetch('/components/footer.html');
