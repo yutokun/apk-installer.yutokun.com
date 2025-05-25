@@ -147,6 +147,8 @@ nav a:hover::after {
 .highlight {
     color: var(--primary-color);
     position: relative;
+    font-size: 1.5em;
+    margin: auto 0.1em;
 }
 
 .highlight::after {
@@ -169,7 +171,6 @@ nav a:hover::after {
 .cta-buttons {
     display: flex;
     gap: 16px;
-    margin-bottom: 40px;
 }
 
 .btn {
@@ -294,11 +295,8 @@ nav a:hover::after {
 
 .carousel-prev,
 .carousel-next {
-    background-color: var(--primary-color);
-    color: white;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
@@ -307,24 +305,26 @@ nav a:hover::after {
     justify-content: center;
     transition: var(--transition);
     position: absolute;
-    top: 45%;
-    transform: translateY(-50%);
+    top: 38%;
     z-index: 20;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.carousel-prev:hover,
-.carousel-next:hover {
-    background-color: var(--primary-light);
-    transform: translateY(-50%) scale(1.1);
+    background-color: transparent;
 }
 
 .carousel-prev {
     left: -25px;
+    transform: rotateZ(180deg);
+}
+
+.carousel-prev:hover {
+    transform: rotateZ(180deg) scale(1.1);
 }
 
 .carousel-next {
     right: -25px;
+}
+
+.carousel-next:hover {
+    transform: scale(1.1);
 }
 
 .carousel-dots {
@@ -380,7 +380,7 @@ nav a:hover::after {
 }
 
 .feature-icon {
-    background-color: rgba(88, 86, 214, 0.1);
+    background-color: rgba(99, 214, 86, 0.2);
     width: 60px;
     height: 60px;
     border-radius: 50%;
