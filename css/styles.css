@@ -222,6 +222,7 @@ nav a:hover::after {
 .screenshots {
     padding: 100px 0;
     background-color: var(--background-dark);
+    overflow-x: hidden;
 }
 
 .screenshots h2 {
