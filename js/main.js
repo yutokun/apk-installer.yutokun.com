@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ヘッダーとフッターを動的に読み込む
+    loadComponents();
+
     // Detect touch device and add class
     const isTouchDevice = () => {
         return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -192,3 +195,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize carousel
     initializeCarousel();
 });
+
+// ヘッダーとフッターを動的に読み込む関数
+async function loadComponents() {
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    
+    if (headerPlaceholder) {
+        try {
+            const headerResponse = await fetch('/components/header.html');
+            const headerContent = await headerResponse.text();
+            headerPlaceholder.innerHTML = headerContent;
+        } catch (error) {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        }
+    }
+    
+    if (footerPlaceholder) {
+        try {
+            const footerResponse = await fetch('/components/footer.html');
+            const footerContent = await footerResponse.text();
+            footerPlaceholder.innerHTML = footerContent;
+        } catch (error) {
+            console.error('フッターの読み込みに失敗しました:', error);
+        }
+    }
+}
+
