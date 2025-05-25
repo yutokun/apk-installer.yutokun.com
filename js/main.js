@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reset automatic slideshow interval
         const resetInterval = () => {
             clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            slideInterval = setInterval(nextSlide, 10000); // Change slide every 10 seconds
         };
 
         // Set up click handlers
