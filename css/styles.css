@@ -602,6 +602,14 @@ footer {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
+    
+    /* スクロールバーを非表示 */
+    -ms-overflow-style: none;  /* IE、Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.touch-device .carousel-container::-webkit-scrollbar {
+    display: none;  /* Chrome、Safari */
 }
 
 .touch-device .carousel-slides {
@@ -611,6 +619,14 @@ footer {
     -webkit-overflow-scrolling: touch;
     transform: none !important;
     transition: none !important;
+    
+    /* スクロールバーを非表示 */
+    -ms-overflow-style: none;  /* IE、Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.touch-device .carousel-slides::-webkit-scrollbar {
+    display: none;  /* Chrome、Safari */
 }
 
 .touch-device .carousel-slide {
@@ -658,4 +674,3 @@ footer {
         gap: 12px;
     }
 }
-
