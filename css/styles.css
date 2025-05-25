@@ -425,12 +425,7 @@ nav a:hover::after {
 
 .app-store-button {
     display: inline-block;
-    transition: var(--transition);
     margin-bottom: 48px;
-}
-
-.app-store-button:hover {
-    transform: translateY(-5px);
 }
 
 .app-store-button img {
