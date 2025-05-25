@@ -52,18 +52,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Carousel functionality
     const initializeCarousel = () => {
-        // Skip JS carousel on touch devices: use CSS scroll-snap instead
+        const carousel = document.querySelector('.carousel-slides');
+        const dots = document.querySelectorAll('.carousel-dot');
+        
+        // For touch devices: handle scroll events to update dots
         if (document.body.classList.contains('touch-device')) {
             // Reset any transform on carousel slides for touch devices
-            const carousel = document.querySelector('.carousel-slides');
             if (carousel) {
                 carousel.style.transform = 'none';
+                
+                // Update dots based on scroll position
+                const updateDotsOnScroll = () => {
+                    const container = document.querySelector('.carousel-container');
+                    if (!container || !dots.length) return;
+                    
+                    const scrollLeft = container.scrollLeft;
+                    const slideWidth = container.offsetWidth;
+                    const currentSlide = Math.round(scrollLeft / slideWidth);
+                    
+                    dots.forEach((dot, index) => {
+                        if (index === currentSlide) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                };
+                
+                // Listen for scroll events
+                const container = document.querySelector('.carousel-container');
+                if (container) {
+                    container.addEventListener('scroll', updateDotsOnScroll, { passive: true });
+                }
+                
+                // Set up dot click handlers for touch devices
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        if (container) {
+                            const slideWidth = container.offsetWidth;
+                            container.scrollTo({
+                                left: index * slideWidth,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
             }
             return;
         }
-        const carousel = document.querySelector('.carousel-slides');
         const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.carousel-dot');
         const prevBtn = document.querySelector('.carousel-prev');
         const nextBtn = document.querySelector('.carousel-next');
         const container = document.querySelector('.carousel-container');
