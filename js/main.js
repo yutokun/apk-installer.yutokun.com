@@ -242,12 +242,20 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadComponents() {
     const headerPlaceholder = document.getElementById('header-placeholder');
     const footerPlaceholder = document.getElementById('footer-placeholder');
+    
+    // 現在のページの言語を判定
+    const isEnglish = window.location.pathname.includes('/en/');
+    const headerFile = isEnglish ? 'components/header.html' : 'components/header.html';
+    const footerFile = isEnglish ? 'components/footer.html' : 'components/footer.html';
 
     if (headerPlaceholder) {
         try {
-            const headerResponse = await fetch('/components/header.html');
+            const headerResponse = await fetch(headerFile);
             const headerContent = await headerResponse.text();
             headerPlaceholder.innerHTML = headerContent;
+            
+            // ヘッダー読み込み後に言語選択機能を初期化
+            initializeLanguageSelector();
         } catch (error) {
             console.error('ヘッダーの読み込みに失敗しました:', error);
         }
@@ -255,12 +263,38 @@ async function loadComponents() {
 
     if (footerPlaceholder) {
         try {
-            const footerResponse = await fetch('/components/footer.html');
+            const footerResponse = await fetch(footerFile);
             const footerContent = await footerResponse.text();
             footerPlaceholder.innerHTML = footerContent;
         } catch (error) {
             console.error('フッターの読み込みに失敗しました:', error);
         }
     }
+}
+
+// 言語選択機能を初期化
+function initializeLanguageSelector() {
+    const languageSelect = document.getElementById('language-select');
+    if (!languageSelect) return;
+    
+    // 現在のページの言語を判定して選択状態を設定
+    const isEnglish = window.location.pathname.includes('/en/');
+    languageSelect.value = isEnglish ? 'en' : 'ja';
+    
+    // 言語切り替えイベントリスナーを追加
+    languageSelect.addEventListener('change', (e) => {
+        const selectedLanguage = e.target.value;
+        const currentPath = window.location.pathname;
+        const currentFilename = currentPath.split('/').pop() || 'index.html';
+        const isCurrentlyEnglish = currentPath.includes('/en/');
+        
+        if (selectedLanguage === 'en' && !isCurrentlyEnglish) {
+            // 日本語版から英語版に切り替え
+            window.location.href = `en/${currentFilename}`;
+        } else if (selectedLanguage === 'ja' && isCurrentlyEnglish) {
+            // 英語版から日本語版に切り替え
+            window.location.href = `../${currentFilename}`;
+        }
+    });
 }
 
