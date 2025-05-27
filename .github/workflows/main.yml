@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 2
 
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.ftp_server }}
           server-dir: /public_html/apk-installer.yutokun.com/
