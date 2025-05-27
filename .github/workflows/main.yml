@@ -29,6 +29,7 @@ jobs:
           server-dir: /public_html/apk-installer.yutokun.com/
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
+          timeout: 90000
           exclude: |
             **/.git*
             **/.git*/**
